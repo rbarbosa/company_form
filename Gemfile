@@ -30,7 +30,18 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'rb-fsevent', :require  => false if RUBY_PLATFORM =~ /darwin/i
+  gem 'guard-rspec'
+  gem 'spork', '~> 0.9.0.rc'
+  gem 'guard-spork'
+end
+
 group :test do
   # Pretty printed test output
   gem 'turn', :require => false
+  gem 'factory_girl_rails'
 end
